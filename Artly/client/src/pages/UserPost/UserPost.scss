@@ -1,0 +1,224 @@
+@use '../../assets/scss/imports_and_variables' as *;
+
+
+img {
+    width: 100px;
+}
+.user-post {
+    font-family: $font-family;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    width: 100%;
+    background-color: $third-color;
+    color:$primary-color;
+
+    .user-post-header {
+        width: 20%;
+        padding-left:50px;
+ 
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            
+        }
+    }
+
+    
+  
+    .user-post-container{
+    
+        position: relative;
+        margin: auto;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 50px;
+        margin-top: 0px;
+
+        .user-post-card {
+            width: 300px;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            border-radius:25px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.472);
+            box-shadow: 19px 11px 29px #0000005e;
+
+            
+
+            .user-post-info {
+                width: 100%;
+                height: 15%;
+                display: flex;
+                padding-left: 10px;
+                gap: 10px;
+                align-items: center;
+                background-color: #090927dc ;
+                position: relative;
+
+                
+              
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    margin-top:10px;
+                    margin-bottom:10px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                p {
+                    font-size: .8rem;
+                    font-weight: bold;
+                    color:$primary-color
+                }
+
+
+            }
+
+            .user-post-image {
+                width: 100%;
+                height: 90%;
+                position: relative;
+
+                .generator {
+                    background-color: transparent;
+                    position: absolute;
+                    top: -5px;
+                    right: 10px;
+                    z-index: 10;
+                    font-size: 15px;
+                    
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  position: relative;
+
+                    
+
+                }
+
+                .ant-image-mask {
+                    border-radius: 0px;
+                }
+                
+
+               
+
+                .user-post-prompt-container {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    backdrop-filter:blur(5px);
+                    background-color: #010118b1;
+             
+
+                    
+
+                  
+
+                    .prompt-toggler {
+                        width: 100%;
+                        padding: 5px;
+                        display: flex;
+                        justify-content: center;
+                        
+                        
+                        .prompt-toggle {
+                            position: relative;
+                            cursor:pointer;
+                            width: 100%;
+                            margin: auto;
+                            color: $primary-color;
+                            font-size: 30px;
+                            transition: none;
+                        }
+                    }
+                    p {
+                        color:$primary-color;
+                        font-weight: 300;
+                        font-size: .8rem;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+
+                    
+                    .clipboard {
+                        cursor: pointer;
+                        color: $primary-color;
+                        position: absolute;
+                        font-size: 1.5rem;
+                        bottom: 10px;
+                        right: 20px;
+                    }
+
+                    .download-button {
+                        color: $primary-color;
+                        font-weight: 600;
+                        font-size: 1.5rem;
+                        position: absolute;
+                        bottom: 10px;
+                        right: 60px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+
+        }
+
+        .explore-more {
+            background-size: cover;
+
+            p {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;
+                cursor: pointer;
+                transition: .2s ease;
+                backdrop-filter: blur(10px);
+                background: rgba(255, 255, 255, 0.101);
+                margin: 0;
+                box-sizing: border-box;
+                
+
+                &:hover {
+                    font-size: 2rem;
+                    color: $third-color;
+                    background: rgba(255, 255, 255, 0.26);
+                }
+    
+                &:active {
+                    
+                    color: white;
+                }
+                
+            }
+
+            
+
+
+
+        }
+
+        
+
+    }
+
+
+
+    
+
+}

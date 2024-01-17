@@ -1,0 +1,296 @@
+@use "../../assets/scss/imports_and_variables" as *;
+
+.ImageGenerator {
+  font-family: $font-family;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+    scale: 1;
+ 
+  .generator-container {
+    overflow: hidden;
+    width: 90%;
+    height: 90%;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 25px;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.075);
+    pointer-events: all;
+    box-shadow: 19px 11px 29px #00000048;
+
+    img.generatorbkg{
+      position: absolute;
+      z-index: -1;
+      box-sizing: border-box;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      opacity: 1;
+      backdrop-filter: blur(10px);
+      filter: blur(20px);
+      
+    }
+    
+
+    .generator-name {
+      font-weight: bold;
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-left: 20px;
+    }
+
+    .image-prompt-container {
+      display: flex;
+      flex-direction: row;
+     
+      width: 100%;
+
+      .generator-prompt {
+        display: flex;
+        flex-direction: column;
+  
+        width: 40%;
+       
+
+        .user-prompt {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          
+          gap: 30px;
+          box-sizing: border-box;
+
+          form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+
+
+          .more-input {
+            width: 100%;
+            color: $third-color;
+            font-size: .9rem;
+            font-weight: 500;
+
+            p {
+              color: $primary-color;
+            }
+          }
+
+          #user-prompt {
+            width: 400px;
+            height: 200px;
+            border-radius: 10px;
+            font-family: $font-family;
+            border: none;
+            outline: none;
+            padding: 10px;
+            background-color: rgb(226, 226, 226);
+            resize: none;
+          }
+
+          button {
+            width: 420px;
+            background-color: $secondary-color;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-family: $font-family;
+            transition: 0.2s;
+            cursor: pointer;
+            box-shadow: none;
+
+            &:hover {
+              color: $primary-color;
+              background-color: $third-color;
+            }
+
+            &:active {
+              color: $third-color;
+              background-color: $primary-color;
+            }
+          }
+        }
+
+        .generator-style {
+          width: 60%;
+          position: relative;
+          margin: auto;
+          display: grid;
+          justify-content: center;
+          align-items: center;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: 1fr;
+          grid-column-gap: 10px;
+          grid-row-gap: 10px;
+
+          .gen-button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: auto;
+            margin-top: 20px;
+            width: 50%;
+
+            img {
+              width: 80px;
+              height: 80px;
+              border-radius: 10px;
+              transition: 0.5s;
+              object-fit: cover;
+              object-position: top;
+              perspective-origin: center;
+
+              &:hover ~ .gen-name {
+                opacity: 1;
+                transform: translate(0px, 0px);
+              }
+
+              &:hover {
+                scale: 1.2;
+              }
+            }
+            .gen-name {
+              margin-top: -10px;
+              padding: 5px 10px 5px 10px;
+              color: white;
+              background-color: rgba(28, 238, 221, 0.464);
+              border-radius: 20px;
+              transform: translate(0px, 10px);
+              transition: 0.5s;
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      .generated-images {
+        width: 55%;
+        display: flex;
+        flex-direction: row;
+
+        .card-holders {
+          width: 100%;
+          height: 100%;
+          display: grid;
+          // grid-template-columns: 1fr 1fr;
+          // grid-template-rows: 1fr 1fr;
+  
+          grid-column-gap: 10px;
+          grid-row-gap: 10px;
+          justify-content: center; 
+          justify-items: center; 
+          align-items: center; 
+
+
+          .image-card {
+            width: 100%;
+          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+
+            .skeleton {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+            }
+
+            .icon-container {
+              width: auto;
+              height: auto;
+              position: absolute;
+              margin: auto;
+              bottom: 5px;
+              pointer-events: none;
+              display: flex;
+              background: #04012285;
+              padding: 5px 20px 5px 20px;
+
+              border-radius: 10px;
+              backdrop-filter: blur(2px);
+              gap: 20px;
+              justify-content: left;
+              align-items:left;
+
+              .share {
+                color: rgb(255, 255, 255);
+                font-size: 1.5rem;
+                border:none;
+                
+                cursor: pointer;
+                pointer-events: all;
+  
+                &:hover {
+                  color: $third-color;
+                }
+              }
+  
+              .download {
+                color: rgb(253, 253, 253);
+                font-size: 2rem;
+              
+                cursor: pointer;
+                pointer-events: all;
+  
+                &:hover {
+                  color: $third-color
+                }
+              }
+
+            }
+
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-image-preview-img {
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.ant-image-preview-operations {
+  background: #040221c5;
+}
+
+.ant-image-img {
+  border-radius: 20px;
+}
+
+.ant-image-mask {
+  border-radius: 20px;
+  background: #0402218d !important;
+}
+
+
+
+
+
+

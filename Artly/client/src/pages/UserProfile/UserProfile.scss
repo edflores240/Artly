@@ -1,0 +1,483 @@
+@use '../../assets/scss/imports_and_variables' as *;
+
+#user-profile{
+    font-family: $font-family;
+    width: 100%;
+    background-color: $fourth-color;
+    color:$primary-color;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+    box-sizing: border-box;
+    padding-bottom: 200px;
+    box-shadow: inset 0px -272px 161px -104px #000B28;
+
+    .profile-info {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        position: relative;
+        
+        .cover-photo{
+            width: 100%;
+            height: 100%;
+            background-position: top;
+            background-size: cover;
+            position: relative;
+            background-color: $fourth-color;
+            overflow: hidden;
+
+            .cover-no-image {
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $fourth-color;
+                font-size: 5rem;
+                pointer-events: none;
+                filter: blur(5px);
+
+                h1 {
+                    pointer-events: none;
+                    text-rendering: geometricPrecision;
+                }
+            }
+            
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                filter: blur(10px);
+            }
+            .shadow-div {
+                position: absolute;
+                width: 100%;
+                height: 115%;
+                bottom: -30px;
+                box-shadow:
+                inset 0px -30px 0px 0px $fourth-color;
+                
+            }
+
+            
+        }
+
+        .profile-info-photo {
+            width: 90%;
+            height: 250px;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            position: absolute;
+            bottom: -150px;
+            margin-left: 50px;
+
+            .update-button {
+                font-size: 2rem;
+                cursor: pointer;
+                transition: .2s ease;
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+
+                &:hover {
+                    transform: translate(0, -5px);
+                }
+
+            }
+
+            .image {
+                width: 200px;
+                height: 200px;
+                position: relative;
+
+               
+
+                button {
+                    cursor:pointer;
+                    &:hover {
+                        background-color: burlywood;
+                    }
+
+                   
+                }
+
+                h1 {
+                width: 180px;
+                height:180px;
+                margin: 0px;
+                padding: 0px;
+                pointer-events: none;
+                background-color: white;
+                border-radius: 50%;
+                color:$third-color;
+                font-size:5rem;
+                text-align: center;
+                border:solid $fourth-color 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: solid $fourth-color 10px;
+            }
+            }
+
+            .ant-image-mask {
+                border-radius: 50%;
+            }
+            
+
+            .info {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 10px;
+
+                .profile-name {
+                    font-weight: bold;
+                    margin: 0;
+                    font-size: 2.5rem;
+
+                }
+
+                .profile-username {
+                    font-weight: lighter;
+                    font-size: 1rem;
+                    margin: 0;
+                }
+
+            }
+
+            .filter-search {
+                width: auto;
+                height: 30%;
+                padding-right: 50px;
+                display: flex;
+                position: absolute;
+                justify-content: right;
+                align-items:center;
+               flex: 1;
+                right: 10px;
+                top: 0px;
+               
+                cursor: pointer;
+
+                
+
+                
+    
+                input {
+                    font-family: $font-family;
+                    height: 20px;
+                    color: $primary-color;
+                    width: 70px;
+                    border: none;
+                    outline: none;
+                    background-color:$fourth-color;
+                    border-radius: 10px;
+                    padding: 10px;
+                    padding-left: 50px;
+                    transition: .5s ease;
+                    &:focus {
+                        width: 400px;
+                    }
+
+                    &:not(:placeholder-shown) {
+                        width: 400px;
+                    }
+
+                    
+                }
+
+                .search-icon {
+                    position: absolute;
+                    left:0px;
+                    padding-left: 10px;
+                    font-size: 1.5rem;
+                }
+
+
+            }
+
+            
+
+            
+        }
+    }
+
+    .post-container {
+
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        
+
+
+
+        .user-post-container{
+            
+            width: 100%;
+            margin-top: 0px;
+            display: flex;
+            justify-content: center;
+            flex-direction:column ;
+          
+
+
+            
+
+            .post-wrapper {
+
+            position: relative;
+            margin: auto;
+            width: 80%;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(auto, 1fr);
+            grid-column-gap: 5px;
+            grid-row-gap: 10px;
+            margin-top: 10px;
+            }
+
+            .reloader {
+     
+                margin: auto;
+                width: 100%;
+                margin-top: 50px;
+                background-color: transparent;
+                display: flex;
+                justify-content: center;
+                
+                button {
+                width: 100px;
+                height: 100px;
+                background-color: $dark-transparent;
+                color: white;
+                font-size: 50px;
+                line-height: 100%;
+                font-family: $font-family;
+                border: none;
+                outline: none;
+                border-radius: 50%;
+                transition: .5s ease;
+                cursor: pointer;
+    
+                &:hover {
+                    transform: rotate(360deg);
+                }
+    
+    
+                }
+    
+    
+    
+             
+            
+                
+            }
+    
+            .user-post-card {
+                position: relative;
+                margin: auto;
+                width: 350px;
+                height: 380px;
+                display: flex;
+                flex-direction: column;
+                border-radius:0px;
+                overflow: hidden;
+                background-color: $third-color;
+                box-shadow: 19px 11px 29px #0000005e;
+                position: relative;
+                
+               
+
+                .user-post-info {
+                    width: 100%;
+                    height: 15%;
+                    display: flex;
+                    padding-left: 10px;
+                    gap: 10px;
+                    align-items: center;
+                    background-color: rgb(255, 255, 255);
+                    position: relative;
+                    
+                   
+    
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        
+                    }
+                    p {
+                        font-size: .8rem;
+                        font-weight: bold;
+                        color:$fourth-color;
+                    }
+    
+    
+                }
+    
+                .user-post-image {
+                    width: 100%;
+                    height: 90%;
+                    position: relative;
+                    
+                    .generator {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                        z-index: 2;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                      
+                        
+    
+                    }
+    
+                    .ant-image-mask {
+                        border-radius: 0px;
+                    }
+
+                    .ant-image-preview-operations{
+                        background-color: $dark-transparent;
+                    }
+                 
+    
+                   
+    
+                    .user-post-prompt-container {
+                        
+                        position: absolute;
+
+                        bottom: -40px;
+                        width: 100%;
+                        height: 385px;
+                        margin: 0;
+                        backdrop-filter: blur(2px);
+                        background-color: rgba(1, 2, 19, 0.418);
+
+                        .prompt-toggler {
+                            width: 100%;
+                            padding: 5px;
+                            display: flex;
+                            justify-content: center;
+                            
+                            
+                            .prompt-toggle {
+                                position: relative;
+                                cursor:pointer;
+                                width: 100%;
+                                margin: auto;
+                                color: $primary-color;
+                                font-size: 30px;
+                                transition: none;
+                                
+                            }
+                        }
+                        p {
+                            color:$primary-color;
+                            font-weight: 300;
+                            font-size: .8rem;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                        }
+    
+                        
+                        .clipboard {
+                            cursor: pointer;
+                            color: $primary-color;
+                            position: absolute;
+                            font-size: 1.5rem;
+                            bottom: 10px;
+                            right: 20px;
+                        }
+
+                        .download-button {
+                            color: $primary-color;
+                            font-weight: 600;
+                            font-size: 1.5rem;
+                            position: absolute;
+                            bottom: 10px;
+                            right: 60px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+    
+    
+            }
+    
+            .explore-more {
+                background-size: cover;
+                display: none;
+    
+                p {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    transition: .2s ease;
+                    backdrop-filter: blur(10px);
+                    background: rgba(255, 255, 255, 0.101);
+                    margin: 0;
+                    box-sizing: border-box;
+                    
+    
+                    &:hover {
+                        font-size: 2rem;
+                        color: $fourth-color;
+                        background: rgba(255, 255, 255, 0.26);
+                    }
+        
+                    &:active {
+                        
+                        color: white;
+                    }
+                    
+                }
+    
+                
+    
+    
+    
+            }
+    
+            
+    
+        }
+    
+    
+ 
+    }
+    
+
+}
+
+.ant-image-preview-operations{
+    background-color: $dark-transparent;
+}

@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,800;1,900&display=swap');
+
+
+$font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
+$primary-color:white;
+$secondary-color:#69E0BF;
+$third-color:#000B28;
+
+
+@mixin blurBackground($backgroundColor, $color ){
+    background-color: $backgroundColor;
+    border-radius: 50px;
+    color:$color;
+    backdrop-filter: blur(5px);
+    font-family: $font-family;
+}
+
+body {
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+
+    a {
+        text-decoration: none;
+
+        &:visited {
+            color: $primary-color;
+        }
+    }
+}
+.Navbar-section.hidden{
+    transform: translate(0px, -400px);
+}
+.Navbar-section {
+    transition: .5s ease;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0px;
+    font-family:$font-family; 
+    color: $primary-color;
+    backdrop-filter: blur(5px);
+    background-color: #010a259e;
+    
+    a {
+        color: $primary-color;
+    }
+
+
+    .navbar-logo {
+        display:flex;
+        flex-direction: row;
+        gap:10px;
+        height: 100%;
+        width: 20%;
+        justify-content: center;
+        align-items: center;
+        
+
+        img {
+            height: 50px;
+            width: auto;
+            cursor: pointer;
+            text-decoration: none;
+       
+        }
+        
+        .Artly {
+           font-weight: bolder; 
+           font-size: 2rem;
+           cursor: pointer;
+           text-decoration: none;
+        
+        }
+
+    }
+
+    .navbar-navlinks {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        width: 50%;
+        font-weight: 500;
+
+        div {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        div:hover {
+            color:$secondary-color;
+        
+        }
+
+    }
+
+    .navbar-account {
+        display: flex;
+        flex-direction:row ;
+        align-items: center;
+        justify-content: right;
+        gap: 10px;
+        width: 25%;
+        padding-right: 20px;
+
+     
+
+        .user-profile-pic{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            overflow: hidden;
+            color: $third-color;
+            display: flex;
+            background: rgb(255, 255, 255);
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 50px;
+            cursor: pointer;
+
+
+            .profile-img{
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                
+            }
+
+            h1 {
+                pointer-events: none;
+                color: $third-color;
+            }
+
+        }
+
+        input:first-child {
+            padding: 10px;
+            backdrop-filter: blur(2px);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: .5s ease;
+
+            @include blurBackground(rgba(225, 225, 225, 0.897), $third-color );
+            
+            &:hover {
+                background-color: rgba(59, 242, 255, 0.297);
+                color: $primary-color;
+            }
+            
+        }
+
+         input:nth-child(2){
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            font-weight: 600;
+            font-family: $font-family;
+            color: $primary-color;
+            cursor: pointer;
+            transition: .2s ease;
+
+
+            &:hover {
+                transform: translate(0, -3px);
+                color: $primary-color;
+            }   
+            
+        }
+    }
+
+}
+
+.dropdown-menu {
+    width: 200px;
+    list-style: none;
+    text-align: start;
+    background-color: transparent;
+        
+  }
+  
+  .dropdown-menu li {
+
+    background: transparent;
+    transition: .2s;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu li:hover {
+    background: #02031d;
+  }
+  
+  .dropdown-menu.clicked {
+    top: -60vh;
+    overflow: hidden;
+  }
+  
+  .dropdown-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    padding: 16px;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .fa-caret-down {
+      display: none;
+    }
+  }
+
+.dropdown {
+    width: 200px;
+    height: 0px;
+    overflow: hidden;
+    position: absolute;
+    margin: 0;
+    transition: .2s;
+    margin-left: 230px;
+    
+    top: 10vh;
+    backdrop-filter: blur(10px);
+    background-color: #010a259e;
+}
+  .dropdown.active {
+    height: 210px;
+
+
+  }
+
+  .profile-dropdown.drop{
+    height: 100px;
+  }
+  
+  .profile-dropdown {
+    transition: .2s ease;
+    list-style: none;
+    overflow: hidden;
+    width: 100px;
+    height: 0;
+    position: relative;
+    backdrop-filter: blur(10px);
+    background-color: #010a258f;
+    color: $primary-color;
+    padding-left: 10px;
+    padding-right: 10px;
+    top: 10vh;
+    right:20px;
+    border-radius: 10px;
+
+    .prof-dropdown {
+        
+        height: 100%;
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: left;
+        gap: 30px;
+        
+      
+    
+
+        div {
+            width:90%;
+            text-align: right;
+            cursor: default;
+            position: relative;
+            margin: auto;
+           display: flex;
+           align-items: center;
+           justify-content: left;
+            display: flex;
+       
+            gap:10px;
+            transition: .2s ease;
+            margin: 0;
+            padding: 0;
+
+            a {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+
+
+            &::before {
+                content: "";
+                transition:  .5s ease;
+                position: absolute;
+                bottom: -10px;
+                height: 3px;
+                width: 0px;
+                background-color: $secondary-color;
+
+                
+            }
+
+            &:hover {
+                color: #69E0BF;
+            }
+
+            &:hover a {
+                color: #69E0BF;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+
+        }
+
+        .username {
+            margin: 0;
+            width: 100%;
+            text-align: left;
+            
+            cursor: pointer;
+        }
+
+      
+        .log-out {
+            position: relative;
+            text-align: left;
+            width: 100%;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 0;
+            bottom: 10px;
+        }
+    }
+
+  }
+
+ 

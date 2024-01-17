@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,800;1,900&display=swap');
+
+$font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
+$primary-color:white;
+$secondary-color:#69E0BF;
+$third-color:#000B28;
+
+
+.Hero-Section {
+    height: 100vh;
+    width: 100%;
+    font-family: $font-family;
+    background-image: url(../../assets/images/background.png);
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0px -272px 161px -104px #000B28;
+
+    .Hero-section-container{
+       
+        height: 100%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+
+
+        .web-name {
+            display: flex;
+            flex-direction:column;
+            width: 80%;
+           justify-content: center;
+            align-items: center;
+            color:$primary-color;
+
+     
+
+            h1 {
+                font-size: 10rem;
+                font-weight: 900;
+                background:linear-gradient(180deg, white 50%, transparent);
+                line-height: 8rem;
+                color: transparent;
+                -webkit-background-clip: text;
+                margin-top: 200px;
+                
+
+
+            }
+
+            p {
+                margin-top: -100px;
+                font-weight: 100;
+                font-size: 2rem;
+
+                
+            }
+            
+
+        }
+
+        .web-generation {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+       
+
+            p {
+                width:500px;
+                text-align: center;
+                color: $primary-color;
+                font-weight: 100;
+            }
+
+            button {
+                background-color: rgba(255, 255, 255, 0.254);
+                border-radius: 50px;
+                color:$primary-color;
+                backdrop-filter: blur(2px);
+                font-family: $font-family;
+                border: none;
+                font-weight: 400;
+                font-size: 1rem;
+                width: 200px;
+                padding: 10px 0px 10px 0px;
+                cursor:pointer;
+                transition: .5s ease;
+
+                &:hover {
+                    color:$primary-color;
+                    background-color: #47d6d63e;
+                }
+            }
+        }
+    }
+}

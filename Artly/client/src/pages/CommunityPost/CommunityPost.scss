@@ -1,0 +1,380 @@
+@use '../../assets/scss/imports_and_variables' as *;
+
+
+.community-post {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    background-color: $third-color;
+    color:$primary-color;
+
+
+    .upper-design {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+
+        &:hover .midjourney{
+            transform: translate(0, -15px) rotate(5deg);
+        }
+
+        &:hover .dalle {
+            transform: translate(0, -70px) rotate(-10deg);
+        }
+        &:hover .anything {
+            transform: translate(0, -45px) rotate(-45deg);
+        }
+
+        &:hover .openjourney{
+            transform: rotate(30deg);
+        }
+
+        .community-header {
+            color: $primary-color;
+            text-align: right;
+            font-size: 8rem;
+            font-weight: 900;
+            position: absolute;
+            top: 80px;
+            right: 50px;
+        }
+
+        img {
+            width: 250px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            position:absolute;
+            transform-origin: bottom;
+            left: 300px;
+            transition: .5s;
+            bottom: 100px;
+
+            
+
+            
+        }
+        .dalle {transform: translate(0, 0px) rotate(0deg)}
+        .anything {transform: rotate(0deg);}
+        .openjourney{transform: rotate(0deg); }
+
+        .midjourney {
+                transform: rotate(0deg);
+                z-index: 10;
+
+               
+
+            }
+
+            .search-bar{
+                width: auto;
+                height: 30%;
+                padding-right: 50px;
+                display: flex;
+                position: absolute;
+                justify-content: right;
+                align-items:center;
+               flex: 1;
+                right: 10px;
+                bottom: 0px;
+
+                cursor: pointer;
+
+                
+                input {
+                    font-family: $font-family;
+                    height: 20px;
+                    color: $third-color;
+                    width: 400px;
+                    border: none;
+                    outline: none;
+                    background-color:$primary-color;
+                    border-radius: 10px;
+                    padding: 10px;
+                    padding-left: 50px;
+                    transition: .5s ease;
+                    
+
+                    
+
+                    
+                }
+                .search-icon {
+                        position: absolute;
+                        left:0px;
+                        color: $third-color;
+                        padding-left: 10px;
+                        font-size: 1.5rem;
+                    }
+            }
+
+        
+        
+
+        
+    }
+
+
+    .community-post-container {
+    
+            width: 100%;
+            margin-top: 0px;
+          
+
+
+            .post-wrapper{
+
+            position: relative;
+            margin: auto;
+            margin-top: 20px;
+            width: 80%;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            }
+      
+
+
+
+            .reloader {
+     
+            margin: auto;
+            width: 100%;
+            margin-top: 50px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            
+            button {
+            width: 100px;
+            height: 100px;
+            background-color: $dark-transparent;
+            color: white;
+            font-size: 50px;
+            line-height: 100%;
+            font-family: $font-family;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            transition: .5s ease;
+            cursor: pointer;
+
+            &:hover {
+                transform: rotate(360deg);
+            }
+
+
+            }
+
+
+
+         
+        
+            
+        }
+    
+    
+            .user-post-card {
+                position: relative;
+                margin: auto;
+                width: 300px;
+                height: 380px;
+                display: flex;
+                flex-direction: column;
+                border-radius:25px;
+                overflow: hidden;
+                background-color: $third-color;
+                box-shadow: 19px 11px 29px #0000005e;
+    
+                .user-post-info {
+                    width: 100%;
+                    height: 15%;
+                    display: flex;
+                    padding-left: 10px;
+                    gap: 10px;
+                    align-items: center;
+                    background-color: #ffffff ;
+                    position: relative;
+                    
+    
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        margin-top:10px;
+                        margin-bottom:10px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    p {
+                        font-size: .8rem;
+                        font-weight: bold;
+                        color:$fourth-color;
+                    }
+    
+    
+                }
+    
+                .user-post-image {
+                    width: 100%;
+                    height: 90%;
+                    position: relative;
+    
+                    .generator {
+                        background-color: transparent;
+                        position: absolute;
+                        top: -5px;
+                        right: 10px;
+                        z-index: 10;
+                        font-size: 15px;
+                        
+                    }
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                      
+                        
+    
+                    }
+    
+                    .ant-image-mask {
+                        border-radius: 0px;
+                    }
+
+                    .ant-image-preview-operations{
+                        background-color: $dark-transparent;
+                    }
+                 
+    
+                   
+    
+                    .user-post-prompt-container {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        backdrop-filter:blur(5px);
+                        background-color: $dark-transparent;
+                 
+    
+                        
+    
+                      
+    
+                        .prompt-toggler {
+                            width: 100%;
+                            padding: 5px;
+                            display: flex;
+                            justify-content: center;
+                            
+                            
+                            .prompt-toggle {
+                                position: relative;
+                                cursor:pointer;
+                                width: 100%;
+                                margin: auto;
+                                color: $primary-color;
+                                font-size: 30px;
+                                transition: none;
+                            }
+                        }
+                        p {
+                            color:$primary-color;
+                            font-weight: 300;
+                            font-size: .8rem;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                        }
+    
+                        
+                        .clipboard {
+                            cursor: pointer;
+                            color: $primary-color;
+                            position: absolute;
+                            font-size: 1.5rem;
+                            bottom: 10px;
+                            right: 20px;
+                        }
+
+                        .download-button {
+                            color: $primary-color;
+                            font-weight: 600;
+                            font-size: 1.5rem;
+                            position: absolute;
+                            bottom: 10px;
+                            right: 60px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+    
+    
+            }
+    
+            .explore-more {
+                background-size: cover;
+                display: none;
+    
+                p {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    transition: .2s ease;
+                    backdrop-filter: blur(10px);
+                    background: rgba(255, 255, 255, 0.101);
+                    margin: 0;
+                    box-sizing: border-box;
+                    
+    
+                    &:hover {
+                        font-size: 2rem;
+                        color: $fourth-color;
+                        background: rgba(255, 255, 255, 0.26);
+                    }
+        
+                    &:active {
+                        
+                        color: white;
+                    }
+                    
+                }
+    
+                
+    
+    
+    
+            }
+
+        
+            
+    
+        }
+
+
+        
+    
+    
+ 
+    }
+    
+
+.ant-image-preview-operations{
+    background-color: $dark-transparent;
+}

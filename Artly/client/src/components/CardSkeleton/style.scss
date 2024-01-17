@@ -1,0 +1,38 @@
+@use "../../assets/scss/imports_and_variables" as *;
+
+
+
+:where(.css-dev-only-do-not-override-1vtf12y).ant-skeleton.ant-skeleton-active .ant-skeleton-title, :where(.css-dev-only-do-not-override-1vtf12y).ant-skeleton.ant-skeleton-active .ant-skeleton-paragraph>li, :where(.css-dev-only-do-not-override-1vtf12y).ant-skeleton.ant-skeleton-active .ant-skeleton-avatar, :where(.css-dev-only-do-not-override-1vtf12y).ant-skeleton.ant-skeleton-active .ant-skeleton-button, :where(.css-dev-only-do-not-override-1vtf12y).ant-skeleton.ant-skeleton-active .ant-skeleton-input, :where(.css-dev-only-do-not-override-1vtf12y).ant-skeleton.ant-skeleton-active .ant-skeleton-image {
+    
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 25%, rgba(255, 255, 255, 0.15) 37%, rgba(255, 255, 255, 0.06) 63%);
+    background-size: 400% 100%;
+    animation-name: css-dev-only-do-not-override-1vtf12y-ant-skeleton-loading;
+    animation-duration: 1.4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+
+    }
+
+.avatar-pic {
+    position: absolute;
+    left: 50px;
+    bottom: 450px;
+    background-color: $fourth-color;
+    border: solid $fourth-color 10px;
+    border-radius: 50%;
+}
+
+.name-skeleton {
+    position: absolute;
+    left:150px;
+}
+
+.name-skeleton.username {
+    position: absolute;
+    left:150px;
+    bottom: 235px;
+}
+
+.profile-info {
+    background-color: $fourth-color;
+}
